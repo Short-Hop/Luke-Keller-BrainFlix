@@ -1,13 +1,13 @@
 import React from 'react';
 import profileImage from './assets/Images/Mohan-muruge.jpg';
 import playingVideo from './assets/Video/BrainStation Sample Video.mp4';
-import videoThumbnail from './assets/Images/video-list-0.jpg';
 import Header from './components/Header';
 import Video from './components/Video';
 import Info from './components/Info';
 import Comments from './components/Comments';
 import SideBar from './components/SideBar';
 
+// Video Thumbnails
 import thumbnail from './assets/Images/video-list-0.jpg'
 import thumbnail1 from './assets/Images/video-list-1.jpg'
 import thumbnail2 from './assets/Images/video-list-2.jpg'
@@ -20,6 +20,7 @@ import thumbnail8 from './assets/Images/video-list-8.jpg'
 
 import './styles/styles.css';
 
+// Data for comments
 const commentArray = [
   {
     name: "Micheal Lyons",
@@ -40,6 +41,7 @@ const commentArray = [
   }
 ]
 
+// Data for videos in the "Next Video" section
 const sideVideoArray = [
   {
     id: '0',
@@ -105,12 +107,13 @@ const sideVideoArray = [
   },
 ]
 
+// Data for the current playing video
 const mainVideo = {
   id: '0',
   title: 'BMX Rampage: 2018 Highlights',
   description: 'On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title',
   channel: 'Red Cow',
-  image: videoThumbnail,
+  image: thumbnail,
   views: '1,001,023',
   likes: '110,985',
   duration: '42',
@@ -119,7 +122,7 @@ const mainVideo = {
   comments: commentArray
 };
 
-
+// Function that converts a timestamp to easily-read format
 function dateConvert(date) {;
   let now = new Date().getTime();
   let timeAgo = new Date(now - date);
@@ -161,25 +164,31 @@ commentArray.forEach(item => {
 
 mainVideo.timestamp = dateConvert(mainVideo.timestamp);
 
-function App() {
+class App extends React.Component {
+  
+  state = {
+    commentArray: commentArray,
+    sideVideoArray: sideVideoArray,
+    mainVideo: mainVideo,
+    profileImage: profileImage,
+  }
+
+render() {
   return (
     <div>
-      <Header profilePic={profileImage} />
-      <Video thumbnail={mainVideo.image} videoSource={mainVideo.video} />
-      
+      <Header profilePic={this.state.profileImage} />
+      <Video thumbnail={this.state.mainVideo.image} videoSource={this.state.mainVideo.video} />
       <main>
         <div>
-          <Info mainVideo={mainVideo}/>
-          <Comments commentArray={mainVideo.comments}/>
+          <Info mainVideo={this.state.mainVideo}/>
+          <Comments commentArray={this.state.mainVideo.comments}/>
         </div>
-        <SideBar sideVideos={sideVideoArray} currentVideoId={mainVideo.id} />
+        <SideBar sideVideos={this.state.sideVideoArray} currentVideoId={this.state.mainVideo.id} />
       </main>
     </div>
   );
 }
-
-
-//Main Video Object
-
+  
+}
 
 export default App;

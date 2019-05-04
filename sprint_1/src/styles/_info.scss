@@ -9,12 +9,11 @@
 
     &__subtitle {
         margin-bottom: 10vw;
-
-        
         h2 {
             margin-right: 2.5vw;
             display: inline-block;
         }
+
         h5 {
             padding-top: 0.5vw;
             display: inline-block;
@@ -22,10 +21,9 @@
     }
 
     &__stats {
-        
         margin-bottom: 7.5vw;
-        h4{
-            
+
+        h4 { 
             display: inline-block;
             vertical-align: top;
 
@@ -59,7 +57,6 @@
         }
 
         &__subtitle {
-
             display:inline-block;
             margin-bottom: 3vw;
             width: 40%;
@@ -73,8 +70,7 @@
             }
         }
 
-        &__stats {
-            
+        &__stats {  
             float: right;
             margin-bottom: 0px;
 
@@ -84,8 +80,7 @@
             img {
                 margin-right: 1vw;
                 height: 2.3vw;
-            }
-            
+            } 
         }
 
         .divider {
@@ -101,7 +96,6 @@
 @media (min-width: 1024px) {
 
     .info {
-
         width: 50vw;
         min-width: 600px;
         padding: 0px;
@@ -113,7 +107,6 @@
         }
 
         &__subtitle {
-
             box-sizing: border-box;
             display:inline-block;
 
@@ -129,7 +122,6 @@
         }
 
         &__stats {
-            
             float: right;
             margin-bottom: 0px;
 

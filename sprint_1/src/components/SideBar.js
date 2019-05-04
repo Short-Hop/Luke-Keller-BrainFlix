@@ -1,5 +1,4 @@
 import React from 'react';
-import videoThumbnail from '../assets/Images/video-list-0.jpg'
 
 class SideBar extends React.Component {
     state = {
@@ -11,11 +10,10 @@ class SideBar extends React.Component {
             <div className="sidebar">
                 <h5>NEXT VIDEO</h5>
                 {
-                    this.state.sideVideoArray.filter(sideVideo => sideVideo.id !== this.props.currentVideoId)
-                    
+                    this.state.sideVideoArray
+                    .filter(sideVideo => sideVideo.id !== this.props.currentVideoId)
                     .map((sideVideo, i) => 
-                        <SideVideo key={i} sideVideoObject={sideVideo}/>
-                        
+                        <SideVideo key={i} sideVideoObject={sideVideo}/>        
                     )    
                 }
             </div>

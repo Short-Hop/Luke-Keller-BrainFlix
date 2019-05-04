@@ -18,7 +18,6 @@ function Info(props) {
                 <h4>{props.mainVideo.views}</h4>
                 <img src={likesIcon} alt="Likes"></img>
                 <h4>{props.mainVideo.likes}</h4>
-
             </div>
 
             <div className="divider"></div>

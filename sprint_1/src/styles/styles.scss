@@ -37,7 +37,6 @@ h1 {
 }
 
 h2 {
-    
     font-size: 5vw;
     line-height: 7vw;
     font-family: AvenirNextDemiBold;
@@ -47,7 +46,6 @@ h2 {
 
 h3 {
     @extend h2;
-    
 }
 
 h4 {
@@ -157,7 +155,6 @@ input {
             
         border: solid 3px $Brainflix-blue;
         border-radius: 4px;
-        
     }
 }
 

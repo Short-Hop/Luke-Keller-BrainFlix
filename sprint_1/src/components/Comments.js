@@ -13,7 +13,6 @@ class Comments extends React.Component {
         
     render() {
         return (
-        <>
             <div className="comments">
 
                 <h3 className="comments__counter">3 Comments</h3>
@@ -39,7 +38,6 @@ class Comments extends React.Component {
                     <Comment commentObject={this.state.commentArray[2]} />
                 </div>
             </div>
-        </>
     )
     }
 
