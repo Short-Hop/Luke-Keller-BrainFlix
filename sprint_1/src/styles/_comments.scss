@@ -155,8 +155,13 @@
 
 @media (min-width: 1024px) {
     .comments {
-        width: 712px;
-        padding: 0px 0px 0px 12.5vw;
+        width: 50vw;
+        min-width: 600px;
+        padding: 0px;
+
+        &__counter {
+            margin-bottom: 24px;
+        }
 
         h5 {
             font-size: 12px;
@@ -173,7 +178,9 @@
 
             flex-direction: row;
             justify-content: flex-end;
-            width: auto;
+            max-width: 648px;
+            min-width: 535px;
+            width: 45vw;
             margin-left: 16px;
 
             textarea {
@@ -187,14 +194,14 @@
 
             button {
                 height: 48px;
-                margin: 0px 40px 0px 16px;
+                margin: 0px 36px 0px 16px;
                 width: 160px
             }
         }
 
         &__comment--container {
 
-            margin-top: 24px;
+            margin-top: 20px;
             margin-bottom: 16px;
             display: flex;
             flex-flow: row nowrap;
@@ -208,7 +215,8 @@
         }
 
         &__comment--body {
-            width: 624px;
+            width: 43vw;
+            min-width: 530px;
             
             h3 {
                 padding: 0px;

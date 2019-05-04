@@ -79,6 +79,17 @@ h5 {
 }
 
 @media (min-width: 1024px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0px;
+  }
   h1 {
     font-size: 36px;
     line-height: 44px;
@@ -558,19 +569,20 @@ header {
 
 @media (min-width: 1024px) {
   .info {
-    width: 712px;
-    padding: 0px 0px 0px 12.5vw;
-    margin-bottom: 64px;
+    width: 50vw;
+    min-width: 600px;
+    padding: 0px;
+    margin-bottom: 48px;
   }
   .info__title {
-    margin-top: 48px;
-    margin-bottom: 24px;
+    margin-top: 36px;
+    margin-bottom: 8px;
   }
   .info__subtitle {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     display: inline-block;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     width: 40%;
   }
   .info__subtitle h2, .info__subtitle h3 {
@@ -595,7 +607,7 @@ header {
     height: 18px;
   }
   .info .divider {
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 32px 0px;
   }
   .info__description {
     width: 520px;
@@ -770,8 +782,12 @@ header {
 
 @media (min-width: 1024px) {
   .comments {
-    width: 712px;
-    padding: 0px 0px 0px 12.5vw;
+    width: 50vw;
+    min-width: 600px;
+    padding: 0px;
+  }
+  .comments__counter {
+    margin-bottom: 24px;
   }
   .comments h5 {
     font-size: 12px;
@@ -794,7 +810,9 @@ header {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    width: auto;
+    max-width: 648px;
+    min-width: 535px;
+    width: 45vw;
     margin-left: 16px;
   }
   .comments__form--container textarea {
@@ -807,11 +825,11 @@ header {
   }
   .comments__form--container button {
     height: 48px;
-    margin: 0px 40px 0px 16px;
+    margin: 0px 36px 0px 16px;
     width: 160px;
   }
   .comments__comment--container {
-    margin-top: 24px;
+    margin-top: 20px;
     margin-bottom: 16px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -830,7 +848,8 @@ header {
     width: 36px;
   }
   .comments__comment--body {
-    width: 624px;
+    width: 43vw;
+    min-width: 530px;
   }
   .comments__comment--body h3 {
     padding: 0px;
@@ -844,6 +863,112 @@ header {
   .comments__comment--body h5 {
     font-size: 12px;
     margin: 0px 8px;
+  }
+}
+
+.sidebar {
+  padding: 0px 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sidebar .divider {
+  display: none;
+}
+
+.sidebar h5 {
+  padding: 12.5vw 0px;
+}
+
+.sidebar__video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5vw;
+}
+
+.sidebar__video img {
+  width: 37.5vw;
+  height: 22vw;
+  border-radius: 4px;
+}
+
+.sidebar__video--info {
+  margin-left: 5vw;
+}
+
+.sidebar__video--info h3 {
+  font-size: 4.4vw;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 14vw;
+}
+
+.sidebar__video--info h4 {
+  font-size: 4.35vw;
+}
+
+@media (min-width: 600px) {
+  .sidebar {
+    padding: 0px 3%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 340px;
+  }
+  .sidebar h5 {
+    padding: 40px 0px;
+  }
+  .sidebar__video {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .sidebar__video img {
+    border-radius: 4px;
+    width: 120px;
+    height: 70px;
+  }
+  .sidebar__video--info {
+    margin-left: 16px;
+  }
+  .sidebar__video--info h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .sidebar__video--info h4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    padding: 0px 1.6vw;
+    border-left: solid 1px #E1E1E1;
+    width: 320px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .sidebar__video--info {
+    width: 200px;
+  }
+  .sidebar .divider {
+    display: block;
+    width: 1px;
+    height: 100%;
+    float: left;
   }
 }
 /*# sourceMappingURL=styles.css.map */
