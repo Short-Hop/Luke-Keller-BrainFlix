@@ -12,8 +12,6 @@ class Comments extends React.Component {
     }
         
     render() {
-
-        console.log(this.state.commentArray1);
         return (
         <>
             <div className="comments">
