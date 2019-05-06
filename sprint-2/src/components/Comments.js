@@ -10,7 +10,7 @@ class Comments extends React.Component {
     render() {
         return (
             <div className="comments">
-            
+
                 <h3 className="comments__counter">3 Comments</h3>
                 <h5>JOIN THE CONVERSATION</h5>
                 <div className="comments__submitter">
@@ -30,8 +30,8 @@ class Comments extends React.Component {
                 <div className="divider"></div>
                 <div className="comments__posted">
                 {
-                    this.props.commentArray.map((comment, i) => 
-                        <Comment commentObject ={comment} key={i} />
+                    this.props.mainVideo.comments.map((comment, i) => 
+                        <Comment commentObject ={comment} key={i} dateConvert={this.props.dateConvert} />
                     )   
                 }
                 </div>
@@ -51,7 +51,7 @@ function Comment(props) {
 
                     <div className="comments__comment--body">
                         <h3>{props.commentObject.name}</h3>
-                        <h5>{props.commentObject.timestamp}</h5>
+                        <h5>{props.dateConvert(props.commentObject.timestamp)}</h5>
                         <h4>{props.commentObject.comment}</h4>
                     </div>
 

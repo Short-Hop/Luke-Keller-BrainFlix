@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SideBar extends React.Component {
 
     render() {
@@ -8,7 +9,7 @@ class SideBar extends React.Component {
                 <h5>NEXT VIDEO</h5>
                 {
                     this.props.sideVideos
-                    .filter(sideVideo => sideVideo.id !== this.props.currentVideoId)
+                    .filter(sideVideo => sideVideo.id !== this.props.mainVideo.id)
                     .map((sideVideo, i) => 
                         <SideVideo key={i} sideVideoObject={sideVideo}/>        
                     )    

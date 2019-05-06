@@ -10,7 +10,7 @@ function Info(props) {
 
             <div className="info__subtitle">
                 <h3>{props.mainVideo.channel}</h3>
-                <h5>{props.mainVideo.timestamp}</h5>
+                <h5>{props.dateConvert(props.mainVideo.timestamp)}</h5>
             </div>
 
             <div className="info__stats">
