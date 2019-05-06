@@ -1,0 +1,190 @@
+// Color Pallate
+$Black:  #323232;
+$Instock-blue: #004892;
+$Brainflix-blue:#0095FF;
+$Brainflix-blue-2:#0065AD;
+$White: #FFFFFF;
+$Silver: #AFAFAF;
+$Instock-blue-dark: #002F5F;
+$Mercury: #E1E1E1;
+$Alabaster: #FAFAFA;
+
+// Fonts
+@font-face {
+    font-family: "AvenirNextRegular";
+    src: url(../assets/fonts/AvenirNextRegular.otf);
+}
+
+@font-face {
+    font-family: "AvenirNextDemiBold";
+    src: url(../assets/fonts/AvenirNextDemi.otf);
+}
+
+@font-face {
+    font-family: "AvenirNextBold";
+    src: url(../assets/fonts/AvenirNextBold.otf)
+}
+
+body {
+    font-family: AvenirNextRegular;
+}
+
+h1 {
+    font-size: 7.5vw;
+    line-height: 10vw;
+    font-family: AvenirNextBold;
+    margin: 0px;
+    color: $Black;
+}
+
+h2 {
+    font-size: 5vw;
+    line-height: 7vw;
+    font-family: AvenirNextDemiBold;
+    margin: 0px;
+    color: $Black;
+}
+
+h3 {
+    @extend h2;
+}
+
+h4 {
+    font-size: 3.76vw;
+    line-height: 6vw;
+    margin: 0px;
+    color: $Black;
+    font-weight: 500;
+}
+
+h5 {
+    color: $Silver;
+    font-size: 4.2vw;
+    line-height: 6vw;
+    margin: 0px;
+    font-weight: 100;
+}
+
+.divider {
+    height: 1px;
+    background-color: $Mercury;
+}
+
+
+@media (min-width: 600px) {
+    
+    h1 {
+        font-size: 4.7vw;
+        line-height: 5.7vw;
+        font-family: AvenirNextBold;
+    }
+
+    h2 {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    h3 {
+        font-size: 2.1vw;
+        line-height: 3vw;
+    }
+
+    h4 {
+        font-size: 1.8vw;
+        line-height: 2.9vw;
+    }
+
+    h5 {
+        font-size: 1.8vw;
+        line-height: 2.6vw;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0px
+        
+    }
+    
+    h1 {
+        font-size: 36px;
+        line-height: 44px;
+        font-family: AvenirNextBold;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    h3 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    h4 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    h5 {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+button {
+    background-color: $Brainflix-blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0px;
+
+    &:hover {
+        background-color: $Brainflix-blue-2;
+    }
+}
+
+input {
+    font-family: AvenirNextRegular;
+    background-color: $Alabaster;
+    border: solid $Mercury 1px;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &:focus {
+            
+        border: solid 3px $Brainflix-blue;
+        border-radius: 4px;
+    }
+}
+
+textarea {
+    @extend input;
+}
+
+
+.profilepic__gray {
+    width: 13vw;
+    height: 13vw;
+    border-radius: 50%;
+    background-color: $Mercury;
+}
+
+@import "header";
+@import "video";
+@import "info";
+@import "comments";
+@import "sidebar";
+
+
+
+
+
+
+
+
