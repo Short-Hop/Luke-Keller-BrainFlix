@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
 
@@ -21,13 +21,16 @@ class SideBar extends React.Component {
 
 function SideVideo(props) {
     return (
-        <div className="sidebar__video">
-            <img src={props.sideVideoObject.image} alt="thumbnail"></img>
-            <div className="sidebar__video--info">
-                <h3>{props.sideVideoObject.title}</h3>
-                <h4>{props.sideVideoObject.channel}</h4>
+        <Link className="link" to={"/videos/" + props.sideVideoObject.id}>
+            <div className="sidebar__video">
+                <img src={props.sideVideoObject.image} alt="thumbnail"></img>
+                <div className="sidebar__video--info">
+                    <h3>{props.sideVideoObject.title}</h3>
+                    <h4>{props.sideVideoObject.channel}</h4>
+                </div>
             </div>
-        </div>
+        </Link>
+        
     )
 }
 

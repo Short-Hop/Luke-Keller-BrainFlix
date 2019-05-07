@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import UploadPage from './UploadPage';
 
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
-            <Route path="/" exact component={App}></Route>
+            <Redirect from="/" exact to="/videos/1af0jruup5gu" ></Redirect>
+            <Route path="/videos/:id" component={App}></Route>
             <Route path="/upload" component={UploadPage}></Route>
         </Switch>
     

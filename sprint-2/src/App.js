@@ -7,36 +7,12 @@ import Info from './components/Info';
 import Comments from './components/Comments';
 import SideBar from './components/SideBar';
 
-// Video Thumbnails
-import thumbnail from './assets/Images/video-list-0.jpg'
-
-
 import './styles/styles.css';
 
 const videoListURL = 'https://project-2-api.herokuapp.com/videos?api_key=1c4367ac-fc44-4603-9767-0d69d2279d8a'
-const videoURL = 'https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=1c4367ac-fc44-4603-9767-0d69d2279d8a'
+let apiKey = '?api_key=1c4367ac-fc44-4603-9767-0d69d2279d8a'
 
- 
-// Data for comments
-const commentArray = [
-  {
-    name: "Wrong",
-    timestamp: 1545120000000,
-    comment: "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed."
-  },
-
-  {
-    name: "Gary Wong",
-    timestamp: 1545120000000,
-    comment: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
-  },
-
-  {
-    name: "Theodore Duncan",
-    timestamp: 1542268800000,
-    comment: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
-  }
-]
+let commentArray=[]
 
 //Placeholder data for the current playing video
 const mainVideo = {
@@ -120,6 +96,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.match)
+
+    let videoURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/' + apiKey;
+    console.log(videoURL);
+    
     axios.get(videoListURL).then(response => {
       let sideVideoArray = [];
       response.data.forEach(item => {
@@ -136,6 +117,21 @@ class App extends React.Component {
         mainVideo: response.data,
       })
     })  
+  }
+
+  componentDidUpdate(prevprops) {
+    if (prevprops.match.params.id !== this.props.match.params.id) {
+      let videoURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/' + apiKey;
+
+      axios.get(videoURL).then(response => {
+        this.setState({
+          mainVideo: response.data,
+        })
+      })  
+    }
+
+    
+
   }
 }
 
