@@ -434,7 +434,8 @@ header .header__upload--container button img {
   }
   .video__controls--bar {
     margin-left: 2vw;
-    width: 42vw;
+    width: 47vw;
+    padding: 0px;
   }
   .video__container {
     width: 100%;
@@ -483,7 +484,7 @@ header .header__upload--container button img {
     width: 15px;
   }
   .video__controls--bar {
-    width: 540px;
+    width: 600px;
     margin-left: 16px;
   }
   .video__container {
@@ -708,6 +709,18 @@ header .header__upload--container button img {
   padding: 0px;
   float: right;
   font-weight: 100;
+}
+
+.comments__delete {
+  background-color: transparent;
+  color: #E1E1E1;
+  float: right;
+}
+
+.comments__delete:hover {
+  background-color: transparent;
+  color: #AFAFAF;
+  text-decoration: underline;
 }
 
 @media (min-width: 600px) {

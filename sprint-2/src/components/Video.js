@@ -21,7 +21,7 @@ function Video(props) {
                     <button>
                         <div className="video__controls--bar"></div>
                     </button>
-                    <p>0:00 / 0:{props.mainVideo.duration}</p>
+                    <p>0:00 / {props.mainVideo.duration}</p>
                 </div>
 
                 <div className="video__controls--container">

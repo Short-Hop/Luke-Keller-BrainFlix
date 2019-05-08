@@ -43,7 +43,6 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-       // padding: 0px 5%;
     }
 
     &__comment--body {
@@ -63,6 +62,18 @@
             padding: 0px;
             float: right;
             font-weight: 100;
+        }
+    }
+
+    &__delete {
+        background-color: transparent;
+        color: $Mercury;
+        float: right;
+
+        &:hover {
+            background-color: transparent;
+            color: $Silver;
+            text-decoration: underline;
         }
     }
 }

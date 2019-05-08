@@ -5,11 +5,9 @@ import UploadForm from './components/UploadForm'
 
 function UploadPage(props) {
     return (
-
         <div>
             <Header profilePic={profileImage}/>
             <UploadForm />
-
         </div>
     )
 }
