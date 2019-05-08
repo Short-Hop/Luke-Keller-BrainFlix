@@ -1,6 +1,7 @@
 import React from 'react';
 import viewsIcon from '../assets/Icons/SVG/Icon-views.svg'
 import likesIcon from '../assets/Icons/SVG/Icon-likes.svg'
+import dateConvert from '../utilities/dateConvert'
 
 function Info(props) {
     return (
@@ -10,7 +11,7 @@ function Info(props) {
 
             <div className="info__subtitle">
                 <h3>{props.mainVideo.channel}</h3>
-                <h5>{props.dateConvert(props.mainVideo.timestamp)}</h5>
+                <h5>{dateConvert(props.mainVideo.timestamp)}</h5>
             </div>
 
             <div className="info__stats">

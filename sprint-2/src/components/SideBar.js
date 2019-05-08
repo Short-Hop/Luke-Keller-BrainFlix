@@ -1,22 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class SideBar extends React.Component {
-
-    render() {
-        return (
-            <div className="sidebar">
-                <h5>NEXT VIDEO</h5>
-                {
-                    this.props.sideVideos
-                    .filter(sideVideo => sideVideo.id !== this.props.mainVideo.id)
-                    .map((sideVideo, i) => 
-                        <SideVideo key={i} sideVideoObject={sideVideo}/>        
-                    )    
-                }
-            </div>
-        )
-    }
+function SideBar(props) {
+    return (
+        <div className="sidebar">
+            <h5>NEXT VIDEO</h5>
+            {
+                props.sideVideos
+                .filter(sideVideo => sideVideo.id !== props.mainVideo.id)
+                .map(sideVideo => 
+                    <SideVideo key={sideVideo.id} sideVideoObject={sideVideo}/>        
+                )    
+            }
+        </div>
+    )
 }
 
 function SideVideo(props) {
@@ -30,7 +27,6 @@ function SideVideo(props) {
                 </div>
             </div>
         </Link>
-        
     )
 }
 
