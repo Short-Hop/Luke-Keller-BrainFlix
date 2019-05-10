@@ -2,10 +2,6 @@ import React from 'react';
 import profileImage from '../assets/Images/Mohan-muruge.jpg'
 import dateConvert from '../utilities/dateConvert'
 
-
-
-
-
 function Comments(props) {
 
     return (

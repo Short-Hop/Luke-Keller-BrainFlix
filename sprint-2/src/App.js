@@ -8,12 +8,10 @@ import CommentsContainer from './containers/CommentsContainer';
 import SideBarContainer from './containers/SideBarContainer';
 import './styles/styles.css';
 
-
-
 const videoListURL = 'https://project-2-api.herokuapp.com/videos?api_key=1c4367ac-fc44-4603-9767-0d69d2279d8a';
 let apiKey = '?api_key=1c4367ac-fc44-4603-9767-0d69d2279d8a';
 
-let commentArray=[];
+let commentArray = [];
 
 //Placeholder data for the current playing video
 const mainVideo = {
@@ -30,12 +28,6 @@ const mainVideo = {
   comments: commentArray,
 };
 
-// Function that converts a timestamp to easily-read format
-
-
-
-
-
 class App extends React.Component {
 
   state = {
@@ -45,6 +37,7 @@ class App extends React.Component {
     userName: 'Mohan Muruge'
   }
 
+  // Posts a comment to the api then updates the App's state
   postComment = (event) => {
     event.preventDefault();
     let comment = event.target.commentBox.value;
@@ -55,7 +48,7 @@ class App extends React.Component {
       comment
     }
     let videoURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/comments' + apiKey;
-    
+
     axios.post(videoURL, commentObject).then(response => {
 
       videoURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/' + apiKey;
@@ -67,6 +60,7 @@ class App extends React.Component {
     })
   }
 
+  // Delete's a comment from the Api and updates the App state
   deleteComment = (event) => {
     let deleteURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/comments/' + event.target.id + apiKey;
 
@@ -77,18 +71,18 @@ class App extends React.Component {
           mainVideo: response.data,
         })
       })
-    })  
+    })
   }
 
   render() {
     return (
       <div>
         <HeaderContainer profilePic={this.state.profileImage} />
-        <VideoContainer mainVideo={this.state.mainVideo}/>
+        <VideoContainer mainVideo={this.state.mainVideo} />
         <main>
           <div>
-            <InfoContainer mainVideo={this.state.mainVideo}/>
-            <CommentsContainer mainVideo={this.state.mainVideo} postComment={this.postComment} deleteComment={this.deleteComment} userName={this.state.userName}/>
+            <InfoContainer mainVideo={this.state.mainVideo} />
+            <CommentsContainer mainVideo={this.state.mainVideo} postComment={this.postComment} deleteComment={this.deleteComment} userName={this.state.userName} />
           </div>
           <SideBarContainer sideVideos={this.state.sideVideos} mainVideo={this.state.mainVideo} />
         </main>
@@ -96,12 +90,13 @@ class App extends React.Component {
     );
   }
 
+  // Loads the initial video data from the api based on the current url
   componentDidMount() {
     console.log(this.props.match.params.id)
 
     let videoURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/' + apiKey;
     console.log(videoURL);
-    
+
     axios.get(videoListURL).then(response => {
       let sideVideoArray = [];
       response.data.forEach(item => {
@@ -117,9 +112,10 @@ class App extends React.Component {
       this.setState({
         mainVideo: response.data,
       })
-    })  
+    })
   }
 
+  // Checks to make sure the URL has changed, then updates the state based on the new URL
   componentDidUpdate(prevprops) {
     if (prevprops.match.params.id !== this.props.match.params.id) {
       let videoURL = 'https://project-2-api.herokuapp.com/videos/' + this.props.match.params.id + '/' + apiKey;
@@ -128,7 +124,7 @@ class App extends React.Component {
         this.setState({
           mainVideo: response.data,
         })
-      })  
+      })
     }
   }
 }

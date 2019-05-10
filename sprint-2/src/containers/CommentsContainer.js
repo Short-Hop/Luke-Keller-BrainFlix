@@ -1,7 +1,7 @@
 import React from 'react';
 import Comments from '../components/Comments';
 
-
+// Container - mainly a placeholder for potential future required state changes
 class CommentContainer extends React.Component {
 
     sortComments = (commentArray) => {

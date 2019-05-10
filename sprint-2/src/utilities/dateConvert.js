@@ -1,3 +1,4 @@
+// Converts a date from milliseconds since epoch to a easily-read format
 export default function dateConvert(date) {
     let now = new Date().getTime();
     let timeAgo = new Date(now - date);
@@ -5,7 +6,7 @@ export default function dateConvert(date) {
     let unit = ''
     let value = ''
 
-    if ((now - date) < 0) {
+    if ((now - date) <= 0) {
         return "Just now"
     }
 
@@ -27,6 +28,8 @@ export default function dateConvert(date) {
     } else if (timeAgo.getUTCSeconds() > 0) {
         value = timeAgo.getUTCSeconds();
         unit = 'seconds';
+    } else {
+        return "Just now";
     }
 
     if (value === 1) {
