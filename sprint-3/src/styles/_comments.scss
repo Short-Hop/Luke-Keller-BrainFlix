@@ -1,0 +1,251 @@
+.comments {
+
+    padding: 0px 5%;
+
+    &__counter {
+        margin-bottom: 10vw;
+    }
+        
+    h5 {
+        font-size: 3.75vw;
+        font-weight: bold;
+        margin-left: 20vw;
+    }
+    &__submitter {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__form--container {
+        display: flex;
+        flex-flow: column;
+        width: 70vw;
+
+        textarea {
+            width: 100%;
+            height: 30vw;
+            padding: 4vw;
+            margin-bottom: 3vw;
+            font-size: 3.76vw;
+            line-height: 6vw;
+        }
+
+        button {
+            height: 15vw;
+            margin-bottom: 7.5vw;
+        }
+    }
+
+    &__comment--container {
+
+        margin-top: 7.5vw;
+        margin-bottom: 5vw;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &__comment--body {
+        width: 73vw;
+        
+        h3 {
+            padding-bottom: 2vw;
+            display: inline-block;
+            font-size: 4.5vw;
+        }
+
+        h4 {
+            font-size: 4.35vw;
+        }
+
+        h5 {
+            padding: 0px;
+            float: right;
+            font-weight: 100;
+        }
+    }
+
+    &__delete {
+        background-color: transparent;
+        color: $Mercury;
+        float: right;
+
+        &:hover {
+            background-color: transparent;
+            color: $Silver;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+
+    .comments {
+
+        padding: 0px 3%;
+
+        &__counter {
+            margin-bottom: 32px;
+        }
+
+        h5 {
+            font-size: 12px;
+            margin-left: 64px;
+
+        }
+
+        &__submitter {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 24px;
+        }
+
+        &__form--container {
+
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 86vw;
+            margin-left: 16px;
+
+            textarea {
+                height: 48px;
+                width: 100%;
+                padding: 13px;
+                margin-bottom: 0px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            button {
+                height: 48px;
+                margin: 0px 40px 0px 16px;
+                width: 160px
+            }
+        }
+
+        &__comment--container {
+
+            margin-top: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            
+            .profilepic__gray {
+                margin-right: 2vw;
+                height: 5vw;
+                width: 5vw;
+            }
+        }
+
+        &__comment--body {
+            width: 81vw;
+            
+            h3 {
+                padding: 0px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            h4 {
+                font-size: 14px;
+                line-height: 22px;
+            }
+
+            h5 {
+                font-size: 12px;
+                float: none;
+                display: inline-block;
+                margin: 0px 8px;
+            }
+
+            
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .comments {
+        width: 50vw;
+        min-width: 600px;
+        padding: 0px;
+
+        &__counter {
+            margin-bottom: 24px;
+        }
+
+        h5 {
+            font-size: 12px;
+            margin-left: 64px;
+        }
+
+        &__submitter {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 24px;
+        }
+
+        &__form--container {
+
+            flex-direction: row;
+            justify-content: flex-end;
+            max-width: 648px;
+            min-width: 535px;
+            width: 45vw;
+            margin-left: 16px;
+
+            textarea {
+                height: 48px;
+                width: 436px;
+                padding: 13px;
+                margin-bottom: 0px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            button {
+                height: 48px;
+                margin: 0px 36px 0px 16px;
+                width: 160px
+            }
+        }
+
+        &__comment--container {
+
+            margin-top: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            
+            .profilepic__gray {
+                margin-right: 16px;
+                height: 36px;
+                width: 36px;
+            }
+        }
+
+        &__comment--body {
+            width: 43vw;
+            min-width: 530px;
+            
+            h3 {
+                padding: 0px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            h4 {
+                font-size: 14px;
+                line-height: 22px;
+            }
+
+            h5 {
+                font-size: 12px;
+                margin: 0px 8px;
+            }
+
+            
+        }
+    }
+}
