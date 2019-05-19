@@ -14,20 +14,19 @@ function findVideo(id) {
     }
 }
 
-let sideVideos = []
 let videos = []
 
 app.use(express.json());
 
 app.get('/videos', (req, res) => {
-    sideVideos = JSON.parse(fs.readFileSync('./videoList.json', 'utf8'))
-    res.send(sideVideos);
+    videos = JSON.parse(fs.readFileSync('./videoInfo.json', 'utf8'))
+    res.send(videos);
 })
 
 app.get('/videos/:id', (req, res) => {
     videos = JSON.parse(fs.readFileSync('./videoInfo.json', 'utf8'))
     res.send(videos.filter(video => {
-        return video.id === req.params.id
+        return video.id == req.params.id
     })
     [0]
     );
@@ -44,7 +43,6 @@ app.get('/videos/:id/comments', (req, res) => {
 
 app.post('/videos', (req, res) => {
     videos = JSON.parse(fs.readFileSync('./videoInfo.json', 'utf8'))
-    sideVideos = JSON.parse(fs.readFileSync('./videoList.json', 'utf8'))
 
     if(!req.body.channel || !req.body.title || !req.body.description || !req.body.image) {
         res.status(400).send('Video could not be uploaded')
@@ -62,27 +60,15 @@ app.post('/videos', (req, res) => {
             timestamp: Date.now(),
             comments: []
         }
-
-        let newSideVideo = {
-            id: videos.length + 1,
-            title: req.body.title,
-            channel: req.body.channel,
-            image: req.body.image
-        }
         videos.push(newVideo);
-        sideVideos.push(newSideVideo);
     }
+    
     fs.writeFile('videoInfo.json', JSON.stringify(videos), error => {
         if (error) {
             console.log(error);
         }
     });
 
-    fs.writeFile('videoList.json', JSON.stringify(sideVideos), error => {
-        if (error) {
-            console.log(error);
-        }
-    });
     res.send('Video Posted!')
 })
 
@@ -131,7 +117,6 @@ app.delete('/videos/:id/comments/:commentId', (req, res) => {
     });
     res.send('Comment Deleted!')
 })
-
 
 app.listen(8080, () => {
     console.log('listening on 8080. . . ')

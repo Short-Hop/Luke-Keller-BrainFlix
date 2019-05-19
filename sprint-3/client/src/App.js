@@ -12,6 +12,8 @@ const videoListURL = 'http://localhost:8080/videos';
 
 let commentArray = [];
 
+
+
 //Placeholder data for the current playing video
 const mainVideo = {
   id: '',
@@ -33,7 +35,8 @@ class App extends React.Component {
     mainVideo: mainVideo,
     sideVideos: [],
     profileImage: profileImage,
-    userName: 'Mohan Muruge'
+    userName: 'Mohan Muruge',
+    videoKey: '?api_key=474c09a9-3e5d-405e-b632-cf61462d5d97'
   }
 
   // Posts a comment to the api then updates the App's state
@@ -77,7 +80,7 @@ class App extends React.Component {
     return (
       <div>
         <HeaderContainer profilePic={this.state.profileImage} />
-        <VideoContainer mainVideo={this.state.mainVideo} />
+        <VideoContainer mainVideo={this.state.mainVideo} videoKey={this.state.videoKey} />
         <main>
           <div>
             <InfoContainer mainVideo={this.state.mainVideo} />

@@ -13,9 +13,9 @@ function UploadForm(props) {
                         <h5>VIDEO THUMBNAIL</h5>
                         <img src={thumbnail} alt ="Thumbnail"></img>
                     </div>
-                    <form className="upload__form" id ="uploadForm">
+                    <form className="upload__form" id ="uploadForm" onSubmit={props.postVideo}>
                     <h5>TITLE YOUR VIDEO </h5>
-                        <input type="text" name="videoTtitle" placeholder="Add a title to your video" ></input>
+                        <input type="text" name="videoTitle" placeholder="Add a title to your video" ></input>
                         <h5>ADD A VIDEO DESCRIPTION</h5>
                         <textarea name="videoDescription" placeholder="Add a description of your video"></textarea>
                     </form>
